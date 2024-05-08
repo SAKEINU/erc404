@@ -26,7 +26,7 @@ contract ERC404ExampleUniswapV3 is Ownable, ERC404, ERC404UniswapV3Exempt {
   {
     // Do not mint the ERC721s to the initial owner, as it's a waste of gas.
     _setERC721TransferExempt(initialMintRecipient_, true);
-    _mintERC20(initialMintRecipient_, maxTotalSupplyERC721_ * units);
+    _mintERC20(initialMintRecipient_, maxTotalSupplyERC721_ * _unit());
   }
 
   function tokenURI(uint256 id_) public pure override returns (string memory) {
